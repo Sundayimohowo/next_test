@@ -50,7 +50,7 @@ const Search = () => {
   }, [term]);
 
   return (
-    <div className="Search h-100">
+    <div className="Search h-100 container">
       <div className="pt-3 nav-wrapper">
         <SearchNav active={active}setActive={setActive} setQuery={setTerm} query={term || ''} />
       </div>
