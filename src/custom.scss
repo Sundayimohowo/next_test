@@ -1,0 +1,13 @@
+$theme-colors: (
+    "primary": #4bf88e,
+    "active": #4bf88e,
+    "secondary": #A6D1E6,
+    "dark": #161618,
+    "white": #FEFBF6,
+);
+
+$component-active-bg: #4bf88e;
+$nav-link-color: #4bf88e;
+
+
+@import "bootstrap/scss/bootstrap";

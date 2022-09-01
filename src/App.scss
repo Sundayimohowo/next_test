@@ -1,0 +1,103 @@
+@import "custom";
+
+.App {
+  text-align: center;
+}
+
+
+
+body {
+  background-color: #161618;
+  color: #FEFBF6;
+}
+
+.content {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+
+.top-nav {
+  height: 50px;
+  background-color: rgba($color: #FFF, $alpha: 0.1);
+}
+
+.Home {
+  height: 100%;
+  position: relative;
+  height: calc(100vh - 100px);
+}
+
+.search-bar {
+  max-width: 500px;
+  background-color: rgba($color: #FFF, $alpha: 0.2);
+  border-radius: 60px;
+  padding: 10px 20px;
+  height: 70px;
+  backdrop-filter: blur(3px) saturate(150%);
+}
+
+.search-bar input {
+  background: transparent;
+  flex: 1;
+  outline: none;
+  padding: 24px 20px;
+  font-size: 20px;
+  border: 0;
+}
+
+.search-bar button {
+  border: 0;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.search-nav-button {
+  cursor: pointer;
+}
+
+.search-nav-bar {
+  background-color: rgba($color: #FFF, $alpha: 0.2);
+  backdrop-filter: blur(3px) saturate(150%);
+}
+
+.search-nav-bar input {
+  background: transparent !important;
+  outline: none !important;
+  border: 0 !important;
+}
+
+.music-table {
+  text-align: left;
+}
+
+.music-table img {
+  margin-right: 20px;
+  width: 40px;
+}
+
+.music-table tr {
+  height: 75px;
+  vertical-align: middle;
+}
+
+.table-dark {
+  --bs-table-bg: #161618;
+}
+
+.all-card {
+  background-color: rgba($color: #FFF, $alpha: 0.1);
+  text-align: left;
+}
+
+.all-card .all-card-img {
+  height: 100px;
+}
+
+.nav-wrapper {
+  position: sticky;
+  top: 0;
+  background: #161618;
+  z-index: 100;
+}
