@@ -1,4 +1,4 @@
-import { EffectCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import AlbumList from "../Components/AlbumList";
@@ -17,8 +17,6 @@ const Search = () => {
   const [ active, setActive ] = useState<string>('all');
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [ loading, setLoading ] = useState<any>({});
-  const [ scrollLoading, setScrollLoading ] = useState<any>({});
-  const [ page, setPage ] = useState<any>({all: 1, music: 1, album: 1, artist: 1})
 
   const navigate = useNavigate();
 
@@ -35,24 +33,6 @@ const Search = () => {
       return newLoading;
     });
   }
-
-  useEffect(() :ReturnType<EffectCallback> => {
-    const getAddition = async () => {
-      let nextPage = page[active] + 1;
-      let newPage :any = { ...page };
-      newPage[active] = nextPage;
-      setPage(newPage);
-      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        fetchMedia(active, setScrollLoading, nextPage);
-      }
-    }
-    window.onscroll = function(ev) {
-      getAddition();
-    };
-    getAddition();
-
-    return ():void => {window.onscroll = null;}
-  }, [])
 
   useEffect(() => {
     if(term) {
@@ -78,19 +58,19 @@ const Search = () => {
       <div className="py-3 h-100" ref={scrollRef}>
         { active == 'all'? (
           loading.all? <>Loading...</>:
-          <AllList />
+          <AllList term={term || ''} />
         ): null }
         { active == 'music'? (
           loading.music? <>Loading...</>:
-          <MusicList />
+          <MusicList term={term || ''} />
         ): null }
         { active == 'album'? (
           loading.album? <>Loading...</>:
-          <AlbumList />
+          <AlbumList term={term || ''} />
         ): null }
         { active == 'artist'? (
           loading.artist? <>Loading...</>:
-          <ArtistList />
+          <ArtistList term={term || ''} />
         ): null }
       </div>
        
